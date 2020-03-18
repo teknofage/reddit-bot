@@ -19,9 +19,11 @@ from requests.exceptions import ReadTimeout
 # Initialize PRAW with a custom User-Agent
 
 r = praw.Reddit("simple comment responder from SIMPLEMINDFULL")
+NAME = os.getenv("USERNAME")
+PASS = os.getenv("PASSWORD")
 
 # and login
-reddit.login("bacon_sandwich_2014", "baconandpeanutbutter1!")
+reddit.login(NAME, PASS)
 
 # Have we run this code before? If not, create an empty list
 if not os.path.isfile("posts_replied_to.txt"):
